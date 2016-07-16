@@ -1,0 +1,19 @@
+{
+  "name": "gsu_assess",
+  "description": "assessment for GSU",
+  "main": "main.js",
+  "authors": [
+    "Lea Fox <lsfox91@gmail.com>"
+  ],
+  "license": "ISC",
+  "moduleType": [],
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "private": true
+}
