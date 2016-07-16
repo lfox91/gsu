@@ -10,13 +10,13 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var form_service_1 = require('./form.service');
-var User_1 = require('./User');
+var user_1 = require('./user');
 var FormComponent = (function () {
     function FormComponent(formService) {
         this.formService = formService;
         this.users = [];
         this.id = 1;
-        this.user = new User_1.User(this.id, '', '', '', '', '');
+        this.user = new user_1.User(this.id, '', '', '', '', '', '', 'Pending');
         this.submitted = false;
         this.active = true;
     }
@@ -43,7 +43,7 @@ var FormComponent = (function () {
     };
     FormComponent.prototype.clear = function () {
         var _this = this;
-        this.user = new User_1.User(this.id, '', '', '', '', '');
+        this.user = new user_1.User(this.id, '', '', '', '', '', '', '');
         this.active = false;
         setTimeout(function () { return _this.active = true; }, 0);
     };

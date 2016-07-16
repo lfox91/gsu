@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { NgForm }    from '@angular/common';
 
 import { FormService } from './form.service';
-import { User }    from './User';
+import { User }    from './user';
 
 @Component({
   selector: 'user-form',
@@ -16,7 +16,7 @@ export class FormComponent implements OnInit {
   users: User[] =[];
   id: number = 1;
   errorMessage: string;
-  user = new User(this.id, '', '', '', '', '');
+  user = new User(this.id, '', '', '', '', '','','Pending');
   submitted = false;
   active = true;
   error: any;
@@ -44,7 +44,7 @@ export class FormComponent implements OnInit {
     this.getUsers();
   }
   clear() {
-    this.user = new User(this.id, '', '', '', '', '');
+    this.user = new User(this.id, '', '', '', '', '', '','');
     this.active = false;
     setTimeout(() => this.active = true, 0);
   }
