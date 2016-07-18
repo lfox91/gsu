@@ -1,0 +1,19 @@
+<div class="container">
+  <section class="container">
+    <h1>Past Requests</h1>
+    <ul>
+      <li *ngFor="let user of users">
+        <ul>
+          <li> Name: {{ user.FirstName + " " + user.LastName }}</li>
+          <li> Start Date: {{ user.StartDate }}</li>
+          <li> End Date: {{ user.EndDate }}</li>
+          <li> Email Address: {{ user.EmailAddress }}</li>
+          <li> Reason: {{ user.Reason }}</li>
+          <li> Submission Status: {{ user.SubmissionStatus }}</li>
+          <button (click)="console.log('hello')">Details</button>
+        </ul>
+      </li>
+    </ul>
+  </section>
+
+</div>
