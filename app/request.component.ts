@@ -23,7 +23,7 @@ export class RequestsComponent implements OnInit {
   // Event handlers
   /////////////////////////
   ngOnInit() {
-    this.getUsers().subscribe( () => console.table(this.users));
+    this.getUsers().subscribe( () => console.log(this.users));
   }
 
 }

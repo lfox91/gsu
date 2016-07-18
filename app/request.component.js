@@ -27,7 +27,7 @@ var RequestsComponent = (function () {
     /////////////////////////
     RequestsComponent.prototype.ngOnInit = function () {
         var _this = this;
-        this.getUsers().subscribe(function () { return console.table(_this.users); });
+        this.getUsers().subscribe(function () { return console.log(_this.users); });
     };
     RequestsComponent = __decorate([
         core_1.Component({
