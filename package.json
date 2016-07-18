@@ -1,6 +1,9 @@
 {
   "name": "gsu",
   "version": "1.0.0",
+  "engines": {
+    "node": "4.1.1"
+  },
   "scripts": {
     "start": "tsc && concurrently \"npm run tsc:w\" \"npm run lite\" ",
     "lite": "lite-server",
