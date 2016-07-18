@@ -42,5 +42,15 @@
     "lite-server": "^2.2.0",
     "typescript": "^1.8.10",
     "typings": "^1.0.4"
-  }
+  },
+  "description": "gsu timeoff",
+  "main": "server.js",
+  "repository": {
+    "type": "git",
+    "url": "https://www.github.com/lfox91/gsu.git"
+  },
+  "keywords": [
+    "gsu"
+  ],
+  "author": ";eaf"
 }
