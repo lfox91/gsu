@@ -15,7 +15,7 @@ var Observable_1 = require('rxjs/Observable');
 var FormService = (function () {
     function FormService(http) {
         this.http = http;
-        this.apiUrl = 'http://timeoffrequest.azurewebsites.net/api/Requests'; // URL to web api
+        this.apiUrl = '//timeoffrequest.azurewebsites.net/api/Requests'; // URL to web api
     }
     FormService.prototype.getUsers = function () {
         return this.http

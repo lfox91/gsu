@@ -9,7 +9,7 @@ import { Observable }    from 'rxjs/Observable';
 @Injectable()
 export class FormService {
   constructor(private http: Http) { }
-  private apiUrl = 'http://timeoffrequest.azurewebsites.net/api/Requests';  // URL to web api
+  private apiUrl = '//timeoffrequest.azurewebsites.net/api/Requests';  // URL to web api
   getUsers(): Observable<User[]> {
     return this.http
                .get(this.apiUrl)
