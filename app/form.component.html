@@ -25,15 +25,20 @@
         emailAddress.touched&&emailAddress.invalid" class="alert alert-danger">Email is required</div>
       </div>
       <div class="form-group">
-        <label for="phoneNumber">Phone Number</label>
-        <input type="text" class="form-control" required [(ngModel)]="user.phoneNumber" ngControl="phoneNumber" name="phoneNumber" #phoneNumber="ngModel" >
-        <div [hidden]="phoneNumber.valid || phoneNumber.pristine ||
-        phoneNumber.touched&&phoneNumber.invalid" class="alert alert-danger">Phone number is required</div>
+        <label for="reason">Reason</label>
+        <input type="text" class="form-control" required [(ngModel)]="user.reason" ngControl="reason" name="reason" #reason="ngModel" >
+        <div [hidden]="reason.valid || reason.pristine ||
+        reason.touched&&reason.invalid" class="alert alert-danger">Reason is required</div>
       </div>
       <div class="form-group">
-        <label for="department">Department</label>
-        <input type="text" class="form-control" required [(ngModel)]="user.department" ngControl="department" name="department" #department="ngModel">
-        <div [hidden]="department.valid || department.pristine || department.touched&&department.invalid" class="alert alert-danger">Department is required</div>
+        <label for="StartDate">Start Date</label>
+        <input type="text" class="form-control" required [(ngModel)]="user.StartDate" ngControl="StartDate" name="StartDate" #StartDate="ngModel">
+        <div [hidden]="StartDate.valid || StartDate.pristine || StartDate.touched&&StartDate.invalid" class="alert alert-danger">Start Date is required</div>
+      </div>
+      <div class="form-group">
+        <label for="EndDate">End Date</label>
+        <input type="text" class="form-control" required [(ngModel)]="user.EndDate" ngControl="EndDate" name="EndDate" #EndDate="ngModel">
+        <div [hidden]="EndDate.valid || EndDate.pristine || EndDate.touched&&EndDate.invalid" class="alert alert-danger">End Date is required</div>
       </div>
       <button type="submit" class="btn btn-default" [disabled]="!userForm.form.valid">Submit</button>
       <button type="button" class="btn btn-default" (click)="clear()">New User</button>
@@ -51,12 +56,20 @@
       <div class="col-xs-9 pull-left">{{ user.emailAddress }}</div>
     </div>
     <div class="row">
-      <div class="col-xs-3">Phone Number</div>
-      <div class="col-xs-9 pull-left">{{ user.phoneNumber }}</div>
+      <div class="col-xs-3">Reason</div>
+      <div class="col-xs-9 pull-left">{{ user.reason }}</div>
     </div>
     <div class="row">
-      <div class="col-xs-3">Department</div>
-      <div class="col-xs-9 pull-left">{{ user.department }}</div>
+      <div class="col-xs-3">Start Date</div>
+      <div class="col-xs-9 pull-left">{{ user.startDate }}</div>
+    </div>
+    <div class="row">
+      <div class="col-xs-3">End Date</div>
+      <div class="col-xs-9 pull-left">{{ user.endDate }}</div>
+    </div>
+    <div class="row">
+      <div class="col-xs-3">Submission Status</div>
+      <div class="col-xs-9 pull-left">{{ user.submissionStatus }}</div>
     </div>
     <br>
     <button class="btn btn-default" (click)="submitted=false;">

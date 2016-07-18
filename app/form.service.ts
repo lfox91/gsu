@@ -1,21 +1,18 @@
 import { Injectable }    from '@angular/core';
 import { Headers, Http, RequestOptions, Response } from '@angular/http';
 
-import 'rxjs/add/operator/toPromise';
 import { User } from './user';
 import { Observable }    from 'rxjs/Observable';
-import { Subscriber }  from 'rxjs/Subscriber';
-import { Subscription }  from 'rxjs/Subscription';
 
 //TODO: Add storedetail method befor promise
 
 @Injectable()
 export class FormService {
   constructor(private http: Http) { }
-  private usersUrl = 'app/users';  // URL to web api
+  private apiUrl = 'http://timeoffrequest.azurewebsites.net/api/Requests';  // URL to web api
   getUsers(): Observable<User[]> {
     return this.http
-               .get(this.usersUrl)
+               .get(this.apiUrl)
                .map(this.extractData)
                .catch(this.handleError);
   }
@@ -25,7 +22,7 @@ export class FormService {
     let options = new RequestOptions({ headers: headers });
 
     return this.http
-               .post(this.usersUrl, body, options)
+               .post(this.apiUrl, body, options)
                .map(this.extractData)
                .catch(this.handleError);
   }
@@ -33,7 +30,7 @@ export class FormService {
     let body = JSON.stringify( user );
     let headers = new Headers({ 'Content-Type': 'application/json' });
     let options = new RequestOptions({ headers: headers });
-    let url = `${this.usersUrl}/${user.id}`;
+    let url = `${this.apiUrl}/${user.id}`;
 
     console.log(`updating user with id ${user.id}`)
         console.log('from put request ' + JSON.stringify(user))
@@ -46,7 +43,7 @@ export class FormService {
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
 
-    let url = `${this.usersUrl}/${user.id}`;
+    let url = `${this.apiUrl}/${user.id}`;
 
     return this.http
                .delete(url, headers)
@@ -67,7 +64,7 @@ export class FormService {
   private extractData(res: Response) {
     let body = res.json();
     console.log('extract body: f.s 69: '+ body);
-    return body.data || { };
+    return body || { };
   }
   private handleError (error: any) {
     let errMsg = (error.message) ? error.message :

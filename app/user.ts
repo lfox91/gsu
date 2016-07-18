@@ -4,7 +4,9 @@ export class User {
     public firstName: string,
     public lastName: string,
     public emailAddress: string,
-    public phoneNumber: string,
-    public department: string
+    public reason: string,
+    public startDate: string,
+    public endDate: string,
+    public submissionStatus: string
   ) { }
 }

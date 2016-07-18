@@ -10,17 +10,16 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var http_1 = require('@angular/http');
-require('rxjs/add/operator/toPromise');
 var Observable_1 = require('rxjs/Observable');
 //TODO: Add storedetail method befor promise
 var FormService = (function () {
     function FormService(http) {
         this.http = http;
-        this.usersUrl = 'app/users'; // URL to web api
+        this.apiUrl = 'http://timeoffrequest.azurewebsites.net/api/Requests'; // URL to web api
     }
     FormService.prototype.getUsers = function () {
         return this.http
-            .get(this.usersUrl)
+            .get(this.apiUrl)
             .map(this.extractData)
             .catch(this.handleError);
     };
@@ -29,7 +28,7 @@ var FormService = (function () {
         var headers = new http_1.Headers({ 'Content-Type': 'application/json' });
         var options = new http_1.RequestOptions({ headers: headers });
         return this.http
-            .post(this.usersUrl, body, options)
+            .post(this.apiUrl, body, options)
             .map(this.extractData)
             .catch(this.handleError);
     };
@@ -37,7 +36,7 @@ var FormService = (function () {
         var body = JSON.stringify(user);
         var headers = new http_1.Headers({ 'Content-Type': 'application/json' });
         var options = new http_1.RequestOptions({ headers: headers });
-        var url = this.usersUrl + "/" + user.id;
+        var url = this.apiUrl + "/" + user.id;
         console.log("updating user with id " + user.id);
         console.log('from put request ' + JSON.stringify(user));
         return this.http
@@ -48,7 +47,7 @@ var FormService = (function () {
     FormService.prototype.delete = function (user) {
         var headers = new http_1.Headers();
         headers.append('Content-Type', 'application/json');
-        var url = this.usersUrl + "/" + user.id;
+        var url = this.apiUrl + "/" + user.id;
         return this.http
             .delete(url, headers)
             .map(this.extractData)
@@ -69,7 +68,7 @@ var FormService = (function () {
     FormService.prototype.extractData = function (res) {
         var body = res.json();
         console.log('extract body: f.s 69: ' + body);
-        return body.data || {};
+        return body || {};
     };
     FormService.prototype.handleError = function (error) {
         var errMsg = (error.message) ? error.message :

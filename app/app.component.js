@@ -9,7 +9,10 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
+var router_1 = require('@angular/router');
 var form_component_1 = require('./form.component');
+var request_component_1 = require('./request.component');
+var details_component_1 = require('./details.component');
 require('./rxjs-operator');
 var AppComponent = (function () {
     function AppComponent() {
@@ -17,8 +20,9 @@ var AppComponent = (function () {
     AppComponent = __decorate([
         core_1.Component({
             selector: 'my-app',
-            template: '<user-form></user-form>',
-            directives: [form_component_1.FormComponent]
+            template: "\n    <header>\n      <nav>\n        <a [routerLink]=\"['/']\">New Request</a>\n        <a [routerLink]=\"['/requests']\">Past Requests</a>\n      </nav>\n    </header>\n    <router-outlet></router-outlet>",
+            directives: [form_component_1.FormComponent, router_1.ROUTER_DIRECTIVES],
+            precompile: [form_component_1.FormComponent, request_component_1.RequestsComponent, details_component_1.DetailsComponent]
         }), 
         __metadata('design:paramtypes', [])
     ], AppComponent);

@@ -16,7 +16,7 @@ var FormComponent = (function () {
         this.formService = formService;
         this.users = [];
         this.id = 1;
-        this.user = new user_1.User(this.id, '', '', '', '', '');
+        this.user = new user_1.User(this.id, '', '', '', '', '', '', 'Pending');
         this.submitted = false;
         this.active = true;
     }
@@ -43,7 +43,7 @@ var FormComponent = (function () {
     };
     FormComponent.prototype.clear = function () {
         var _this = this;
-        this.user = new user_1.User(this.id, '', '', '', '', '');
+        this.user = new user_1.User(this.id, '', '', '', '', '', '', '');
         this.active = false;
         setTimeout(function () { return _this.active = true; }, 0);
     };
