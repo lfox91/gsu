@@ -7,6 +7,7 @@
   "scripts": {
     "start": "node server.js",
     "lite": "lite-server",
+    "preinstall": "npm i typings -g"
     "postinstall": "typings install",
     "tsc": "tsc",
     "tsc:w": "tsc -w",
