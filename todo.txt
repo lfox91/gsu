@@ -1,9 +1,0 @@
-[x] Fix put - not saving the correct object
-[] create a way to view the details of the Request
-[] change the edit change to a template named edit.html
-[] have a detail.html
-
-extra:
-[] Clean up files
-[] Clean up file structure
-[] Add some tests
