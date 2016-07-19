@@ -33,7 +33,7 @@ export class DetailsComponent implements OnInit, OnDestroy {
   ngOnDestroy() {
     this.sub.unsubscribe();
   }
-  ngOnChanges( changes ){
+  ngOnChanges( changes: any ){
     this.user = changes;
   }
   goBack() {
