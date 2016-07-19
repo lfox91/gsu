@@ -20,21 +20,19 @@ export class DetailsComponent implements OnInit, OnDestroy {
   /////////////////////////
   // Event handlers
   /////////////////////////
-  ngOnInit() {
-    this.sub = this.route.params.subscribe( params => {
+  getUser(){
+    return this.sub = this.route.params.map( params => {
       let id = +params['id'];
-      this.formService.getDetails(id)
-                      .subscribe( user => {
-                        this.user = user;
-                        console.log('ngOnInit this.user  = ' + JSON.stringify( this.user));
-                      });
+      return this.formService
+                 .getDetails(id)
+                 .map( user => this.user = user );
     });
+  }
+  ngOnInit() {
+    this.getUser().subscribe(()=>console.log(JSON.stringify(this.user)));
   }
   ngOnDestroy() {
     this.sub.unsubscribe();
-  }
-  ngOnChanges( changes: any ){
-    this.user = changes;
   }
   goBack() {
     window.history.back();

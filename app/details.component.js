@@ -20,22 +20,21 @@ var DetailsComponent = (function () {
     /////////////////////////
     // Event handlers
     /////////////////////////
+    DetailsComponent.prototype.getUser = function () {
+        var _this = this;
+        return this.sub = this.route.params.map(function (params) {
+            var id = +params['id'];
+            return _this.formService
+                .getDetails(id)
+                .map(function (user) { return _this.user = user; });
+        });
+    };
     DetailsComponent.prototype.ngOnInit = function () {
         var _this = this;
-        this.sub = this.route.params.subscribe(function (params) {
-            var id = +params['id'];
-            _this.formService.getDetails(id)
-                .subscribe(function (user) {
-                _this.user = user;
-                console.log('ngOnInit this.user  = ' + JSON.stringify(_this.user));
-            });
-        });
+        this.getUser().subscribe(function () { return console.log(JSON.stringify(_this.user)); });
     };
     DetailsComponent.prototype.ngOnDestroy = function () {
         this.sub.unsubscribe();
-    };
-    DetailsComponent.prototype.ngOnChanges = function (changes) {
-        this.user = changes;
     };
     DetailsComponent.prototype.goBack = function () {
         window.history.back();

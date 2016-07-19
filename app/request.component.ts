@@ -22,11 +22,9 @@ export class RequestsComponent implements OnInit {
                .map( users => this.users = users );
   }
 
-  /////////////////////////
   // Event handlers
-  /////////////////////////
   ngOnInit() {
-    this.getUsers();
+    this.getUsers().subscribe(()=> console.log(this.users));
   }
 
   showDetail( user: User ) {

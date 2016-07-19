@@ -24,11 +24,10 @@ var RequestsComponent = (function () {
             .getUsers()
             .map(function (users) { return _this.users = users; });
     };
-    /////////////////////////
     // Event handlers
-    /////////////////////////
     RequestsComponent.prototype.ngOnInit = function () {
-        this.getUsers();
+        var _this = this;
+        this.getUsers().subscribe(function () { return console.log(_this.users); });
     };
     RequestsComponent.prototype.showDetail = function (user) {
         this.selectedUser = user;
