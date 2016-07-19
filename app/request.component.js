@@ -34,8 +34,8 @@ var RequestsComponent = (function () {
     RequestsComponent.prototype.showDetail = function (user) {
         console.log(user);
         this.selectedUser = user;
-        console.log(this.selectedUser);
-        this.router.navigate(['/', this.selectedUser.Id]);
+        console.log(this.selectedUser.Id);
+        this.router.navigate(['/requests/', this.selectedUser.Id]);
     };
     RequestsComponent = __decorate([
         core_1.Component({

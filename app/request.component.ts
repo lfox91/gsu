@@ -31,8 +31,8 @@ export class RequestsComponent implements OnInit {
   showDetail( user: User ) {
     console.log(user);
     this.selectedUser = user;
-    console.log(this.selectedUser)
-    this.router.navigate(['/', this.selectedUser.Id]);
+    console.log(this.selectedUser.Id)
+    this.router.navigate(['/requests/', this.selectedUser.Id]);
   }
 
 }
