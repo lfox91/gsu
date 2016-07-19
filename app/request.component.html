@@ -1,19 +1,39 @@
 <div class="container">
   <section class="container">
     <h1>Past Requests</h1>
-    <ul>
-      <li *ngFor="let user of users" [class.selected]="user === selectedUser">
-        <ul>
-          <li> Name: {{ user.FirstName + " " + user.LastName }}</li>
-          <li> Start Date: {{ user.StartDate }}</li>
-          <li> End Date: {{ user.EndDate }}</li>
-          <li> Email Address: {{ user.EmailAddress }}</li>
-          <li> Reason: {{ user.Reason }}</li>
-          <li> Submission Status: {{ user.SubmissionStatus }}</li>
+    <table>
+      <thead>
+        <tr>
+            <th>Name</th>
+            <th>Start Date</th>
+            <th>End Date</th>
+            <th>Email Address</th>
+            <th>Reason</th>
+            <th>Submission Status</th>
+        </tr>
+      </thead>
+      <tfoot>
+        <tr>
+          <th>Name</th>
+          <th>Start Date</th>
+          <th>End Date</th>
+          <th>Email Address</th>
+          <th>Reason</th>
+          <th>Submission Status</th>
+        </tr>
+      </tfoot>
+      <tbody>
+        <tr *ngFor="let user of users" [class.selected]="user === selectedUser">
+          <td> Name: {{ user.FirstName + " " + user.LastName }}</li>
+          <td> Start Date: {{ user.StartDate }}</li>
+          <td> End Date: {{ user.EndDate }}</li>
+          <td> Email Address: {{ user.EmailAddress }}</li>
+          <td> Reason: {{ user.Reason }}</li>
+          <td> Submission Status: {{ user.SubmissionStatus }}</li>
           <button (click)="showDetail(user)">Details</button>
-        </ul>
-      </li>
-    </ul>
+        </tr>
+      </tbody>
+    </table>
   </section>
 
 </div>

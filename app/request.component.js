@@ -28,8 +28,7 @@ var RequestsComponent = (function () {
     // Event handlers
     /////////////////////////
     RequestsComponent.prototype.ngOnInit = function () {
-        var _this = this;
-        this.getUsers().subscribe(function () { return console.log(_this.users); });
+        this.getUsers();
     };
     RequestsComponent.prototype.showDetail = function (user) {
         this.selectedUser = user;

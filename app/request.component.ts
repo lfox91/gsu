@@ -26,7 +26,7 @@ export class RequestsComponent implements OnInit {
   // Event handlers
   /////////////////////////
   ngOnInit() {
-    this.getUsers().subscribe( () => console.log(this.users));
+    this.getUsers();
   }
   showDetail( user: User ) {
     this.selectedUser = user;
