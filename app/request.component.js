@@ -41,9 +41,6 @@ var RequestsComponent = (function () {
             selector: 'requests',
             templateUrl: 'app/request.component.html',
             providers: [form_service_1.FormService]
-        }),
-        core_1.Directive({
-            selector: '.table'
         }), 
         __metadata('design:paramtypes', [form_service_1.FormService, core_1.ElementRef, router_1.Router])
     ], RequestsComponent);

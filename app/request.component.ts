@@ -11,9 +11,7 @@ declare var jQuery: any;
   templateUrl: 'app/request.component.html',
   providers: [FormService]
 })
-@Directive({
-    selector: '.table'
-})
+
 export class RequestsComponent implements OnInit {
   constructor ( private formService: FormService,
                 private elRef: ElementRef,
