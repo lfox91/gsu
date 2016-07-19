@@ -23,8 +23,8 @@ var DetailsComponent = (function () {
     DetailsComponent.prototype.ngOnInit = function () {
         var _this = this;
         this.sub = this.route.params.subscribe(function (params) {
-            var id = +params['id'];
-            _this.formService.getDetails(id)
+            var id = +params['Id'];
+            _this.formService.getDetails(Id)
                 .subscribe(function (user) { return _this.user = user; });
         });
     };

@@ -32,9 +32,7 @@ var RequestsComponent = (function () {
         this.getUsers().subscribe(function () { return console.log(_this.users); });
     };
     RequestsComponent.prototype.showDetail = function (user) {
-        console.log(user);
         this.selectedUser = user;
-        console.log(this.selectedUser.Id);
         this.router.navigate(['/requests/', this.selectedUser.Id]);
     };
     RequestsComponent = __decorate([
