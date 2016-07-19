@@ -9,10 +9,12 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
+var router_1 = require('@angular/router');
 var form_service_1 = require('./form.service');
 var RequestsComponent = (function () {
-    function RequestsComponent(formService) {
+    function RequestsComponent(formService, router) {
         this.formService = formService;
+        this.router = router;
         this.users = [];
     }
     ;
@@ -29,13 +31,17 @@ var RequestsComponent = (function () {
         var _this = this;
         this.getUsers().subscribe(function () { return console.log(_this.users); });
     };
+    RequestsComponent.prototype.showDetail = function (user) {
+        this.selectedUser = user;
+        this.router.navigate(['/', this.selectedUser.id]);
+    };
     RequestsComponent = __decorate([
         core_1.Component({
             selector: 'requests',
             templateUrl: 'app/request.component.html',
             providers: [form_service_1.FormService]
         }), 
-        __metadata('design:paramtypes', [form_service_1.FormService])
+        __metadata('design:paramtypes', [form_service_1.FormService, router_1.Router])
     ], RequestsComponent);
     return RequestsComponent;
 }());

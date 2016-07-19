@@ -2,7 +2,7 @@
 var router_1 = require('@angular/router');
 var request_component_1 = require('./request.component');
 var details_component_1 = require('./details.component');
-var form_component_1 = require("./form.component");
+var form_component_1 = require('./form.component');
 var routes = [
     { path: '', component: form_component_1.FormComponent },
     { path: 'requests', component: request_component_1.RequestsComponent },

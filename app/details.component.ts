@@ -1,7 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { NgForm }    from '@angular/common';
+import { ActivatedRoute } from '@angular/router';
 
 import { FormService } from './form.service';
+import { User } from './user'
 
 @Component({
   selector: 'details',
@@ -9,20 +11,27 @@ import { FormService } from './form.service';
   providers: [FormService]
 })
 
-export class DetailsComponent implements OnInit {
-  constructor ( private formService: FormService ) {};
-
-  getUsers() {
-    return this.formService
-               .getUsers()
-               .map( users => { console.log(users)});
-  }
+export class DetailsComponent implements OnInit, OnDestroy {
+  constructor ( private formService: FormService,
+                private route: ActivatedRoute) {};
+  user: User;
+  sub: any;
 
   /////////////////////////
   // Event handlers
   /////////////////////////
   ngOnInit() {
-    this.getUsers();
+    this.sub = this.route.params.subscribe(params => {
+      let id = +params['id'];
+      this.formService.getDetails(id)
+      .then(user => this.user = user);
+    });
+  }
+  ngOnDestroy() {
+    this.sub.unsubscribe();
   }
 
+  goBack() {
+    window.history.back();
+  }
 }

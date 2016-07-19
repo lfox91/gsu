@@ -23,6 +23,13 @@ var FormService = (function () {
             .map(this.extractData)
             .catch(this.handleError);
     };
+    FormService.prototype.getDetails = function (id) {
+        var url = "apiUrl/" + id;
+        return this.http
+            .get(url)
+            .map(this.extractData)
+            .catch(this.handleError);
+    };
     FormService.prototype.post = function (user) {
         var body = JSON.stringify(user);
         var headers = new http_1.Headers({ 'Content-Type': 'application/json' });

@@ -16,6 +16,14 @@ export class FormService {
                .map(this.extractData)
                .catch(this.handleError);
   }
+  getDetails(id: number): Observable<User> {
+    let url = `apiUrl/${id}`;
+
+    return this.http
+               .get(url)
+               .map(this.extractData)
+               .catch(this.handleError)
+  }
   private post(user: User): Observable<User> {
     let body = JSON.stringify( user);
     let headers = new Headers({ 'Content-Type': 'application/json' });

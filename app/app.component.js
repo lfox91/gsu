@@ -20,7 +20,7 @@ var AppComponent = (function () {
     AppComponent = __decorate([
         core_1.Component({
             selector: 'my-app',
-            template: "\n    <header>\n      <nav>\n        <a [routerLink]=\"['/']\">New Request</a>\n        <a [routerLink]=\"['/requests']\">Past Requests</a>\n      </nav>\n    </header>\n    <router-outlet></router-outlet>",
+            template: "\n    <header>\n      <nav>\n        <a [routerLink]=\"['/']\" routerLinkActive=\"active\">New Request</a>\n        <a [routerLink]=\"['/requests']\" routerLinkActive=\"active\">Past Requests</a>\n      </nav>\n    </header>\n    <router-outlet></router-outlet>",
             directives: [form_component_1.FormComponent, router_1.ROUTER_DIRECTIVES],
             precompile: [form_component_1.FormComponent, request_component_1.RequestsComponent, details_component_1.DetailsComponent]
         }), 

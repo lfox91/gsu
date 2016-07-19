@@ -9,22 +9,30 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
+var router_1 = require('@angular/router');
 var form_service_1 = require('./form.service');
 var DetailsComponent = (function () {
-    function DetailsComponent(formService) {
+    function DetailsComponent(formService, route) {
         this.formService = formService;
+        this.route = route;
     }
     ;
-    DetailsComponent.prototype.getUsers = function () {
-        return this.formService
-            .getUsers()
-            .map(function (users) { console.log(users); });
-    };
     /////////////////////////
     // Event handlers
     /////////////////////////
     DetailsComponent.prototype.ngOnInit = function () {
-        this.getUsers();
+        var _this = this;
+        this.sub = this.route.params.subscribe(function (params) {
+            var id = +params['id'];
+            _this.formService.getDetails(id)
+                .then(function (user) { return _this.user = user; });
+        });
+    };
+    DetailsComponent.prototype.ngOnDestroy = function () {
+        this.sub.unsubscribe();
+    };
+    DetailsComponent.prototype.goBack = function () {
+        window.history.back();
     };
     DetailsComponent = __decorate([
         core_1.Component({
@@ -32,7 +40,7 @@ var DetailsComponent = (function () {
             templateUrl: 'app/details.component.html',
             providers: [form_service_1.FormService]
         }), 
-        __metadata('design:paramtypes', [form_service_1.FormService])
+        __metadata('design:paramtypes', [form_service_1.FormService, router_1.ActivatedRoute])
     ], DetailsComponent);
     return DetailsComponent;
 }());

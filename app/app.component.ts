@@ -11,8 +11,8 @@ import './rxjs-operator';
     template: `
     <header>
       <nav>
-        <a [routerLink]="['/']">New Request</a>
-        <a [routerLink]="['/requests']">Past Requests</a>
+        <a [routerLink]="['/']" routerLinkActive="active">New Request</a>
+        <a [routerLink]="['/requests']" routerLinkActive="active">Past Requests</a>
       </nav>
     </header>
     <router-outlet></router-outlet>`,

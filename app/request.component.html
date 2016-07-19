@@ -2,7 +2,7 @@
   <section class="container">
     <h1>Past Requests</h1>
     <ul>
-      <li *ngFor="let user of users">
+      <li *ngFor="let user of users" [class.selected]="hero === selectedHero">
         <ul>
           <li> Name: {{ user.FirstName + " " + user.LastName }}</li>
           <li> Start Date: {{ user.StartDate }}</li>
@@ -10,7 +10,7 @@
           <li> Email Address: {{ user.EmailAddress }}</li>
           <li> Reason: {{ user.Reason }}</li>
           <li> Submission Status: {{ user.SubmissionStatus }}</li>
-          <button (click)="console.log('hello')">Details</button>
+          <button (click)="showDetail()">Details</button>
         </ul>
       </li>
     </ul>

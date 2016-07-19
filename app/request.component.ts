@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm }    from '@angular/common';
+import { Router } from '@angular/router';
 
 import { FormService } from './form.service';
 import { User } from './user';
@@ -11,8 +12,10 @@ import { User } from './user';
 })
 
 export class RequestsComponent implements OnInit {
-  constructor ( private formService: FormService ) {};
+  constructor ( private formService: FormService,
+                private router: Router ) {};
   users: User[]= [] ;
+  selectedUser: User;
   getUsers() {
     return this.formService
                .getUsers()
@@ -24,6 +27,10 @@ export class RequestsComponent implements OnInit {
   /////////////////////////
   ngOnInit() {
     this.getUsers().subscribe( () => console.log(this.users));
+  }
+  showDetail( user: User ) {
+    this.selectedUser = user;
+    this.router.navigate(['/', this.selectedUser.id]);
   }
 
 }
