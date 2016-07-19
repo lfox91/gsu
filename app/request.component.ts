@@ -2,12 +2,14 @@ import { Component, OnInit } from '@angular/core';
 import { NgForm }    from '@angular/common';
 import { Router } from '@angular/router';
 
+import {DataTableDirectives} from 'angular2-datatable/datatable';
 import { FormService } from './form.service';
 import { User } from './user';
 
 @Component({
   selector: 'requests',
   templateUrl: 'app/request.component.html',
+  directives: [DataTableDirectives],
   providers: [FormService]
 })
 

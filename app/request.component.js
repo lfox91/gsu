@@ -10,6 +10,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var router_1 = require('@angular/router');
+var datatable_1 = require('angular2-datatable/datatable');
 var form_service_1 = require('./form.service');
 var RequestsComponent = (function () {
     function RequestsComponent(formService, router) {
@@ -46,6 +47,7 @@ var RequestsComponent = (function () {
         core_1.Component({
             selector: 'requests',
             templateUrl: 'app/request.component.html',
+            directives: [datatable_1.DataTableDirectives],
             providers: [form_service_1.FormService]
         }), 
         __metadata('design:paramtypes', [form_service_1.FormService, router_1.Router])
