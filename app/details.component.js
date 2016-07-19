@@ -34,6 +34,9 @@ var DetailsComponent = (function () {
     DetailsComponent.prototype.ngOnDestroy = function () {
         this.sub.unsubscribe();
     };
+    DetailsComponent.prototype.noOnChanges = function (changes) {
+        this.user = changes;
+    };
     DetailsComponent.prototype.goBack = function () {
         window.history.back();
     };

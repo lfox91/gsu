@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy, OnChanges } from '@angular/core';
 import { NgForm }    from '@angular/common';
 import { ActivatedRoute } from '@angular/router';
 
@@ -33,7 +33,9 @@ export class DetailsComponent implements OnInit, OnDestroy {
   ngOnDestroy() {
     this.sub.unsubscribe();
   }
-
+  noOnChanges( changes ){
+    this.user = changes;
+  }
   goBack() {
     window.history.back();
   }
