@@ -26,7 +26,7 @@ var DetailsComponent = (function () {
             console.table(params);
             var id = +params['id'];
             _this.formService.getDetails(id)
-                .subscribe(function (user) { return _this.user = user; });
+                .subscribe(function (user) { _this.user = user; console.log(user); });
         });
     };
     DetailsComponent.prototype.ngOnDestroy = function () {
