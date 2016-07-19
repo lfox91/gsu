@@ -2,7 +2,7 @@
   <section class="container">
     <h1>Past Requests</h1>
     <ul>
-      <li *ngFor="let user of users" [class.selected]="hero === selectedHero">
+      <li *ngFor="let user of users" [class.selected]="user === selectedUser">
         <ul>
           <li> Name: {{ user.FirstName + " " + user.LastName }}</li>
           <li> Start Date: {{ user.StartDate }}</li>
