@@ -35,7 +35,7 @@ var RequestsComponent = (function () {
         console.log(user);
         this.selectedUser = user;
         console.log(this.selectedUser);
-        this.router.navigate(['/', this.selectedUser.id]);
+        this.router.navigate(['/', this.selectedUser.Id]);
     };
     RequestsComponent = __decorate([
         core_1.Component({
