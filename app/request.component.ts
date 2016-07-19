@@ -27,6 +27,14 @@ export class RequestsComponent implements OnInit {
   /////////////////////////
   ngOnInit() {
     this.getUsers();
+    $(document).ready(function() {
+      $('#requests').DataTable( {
+          dom: 'Bfrtip',
+          buttons: [
+              'copy', 'csv', 'excel', 'pdf', 'print'
+          ]
+    } );
+} );
   }
   showDetail( user: User ) {
     this.selectedUser = user;

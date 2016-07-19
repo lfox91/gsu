@@ -29,6 +29,14 @@ var RequestsComponent = (function () {
     /////////////////////////
     RequestsComponent.prototype.ngOnInit = function () {
         this.getUsers();
+        $(document).ready(function () {
+            $('#requests').DataTable({
+                dom: 'Bfrtip',
+                buttons: [
+                    'copy', 'csv', 'excel', 'pdf', 'print'
+                ]
+            });
+        });
     };
     RequestsComponent.prototype.showDetail = function (user) {
         this.selectedUser = user;
