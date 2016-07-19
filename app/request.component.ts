@@ -1,10 +1,9 @@
-import { Component, OnInit, ElementRef, Directive } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { NgForm }    from '@angular/common';
 import { Router } from '@angular/router';
 
 import { FormService } from './form.service';
 import { User } from './user';
-
 
 @Component({
   selector: 'requests',
@@ -14,7 +13,6 @@ import { User } from './user';
 
 export class RequestsComponent implements OnInit {
   constructor ( private formService: FormService,
-                private elRef: ElementRef,
                 private router: Router ) {};
   users: User[]= [] ;
   selectedUser: User;
@@ -30,7 +28,7 @@ export class RequestsComponent implements OnInit {
   ngOnInit() {
     this.getUsers();
   }
-  
+
   showDetail( user: User ) {
     this.selectedUser = user;
     this.router.navigate(['/requests/', this.selectedUser.Id]);

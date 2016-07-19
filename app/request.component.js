@@ -12,9 +12,8 @@ var core_1 = require('@angular/core');
 var router_1 = require('@angular/router');
 var form_service_1 = require('./form.service');
 var RequestsComponent = (function () {
-    function RequestsComponent(formService, elRef, router) {
+    function RequestsComponent(formService, router) {
         this.formService = formService;
-        this.elRef = elRef;
         this.router = router;
         this.users = [];
     }
@@ -41,7 +40,7 @@ var RequestsComponent = (function () {
             templateUrl: 'app/request.component.html',
             providers: [form_service_1.FormService]
         }), 
-        __metadata('design:paramtypes', [form_service_1.FormService, core_1.ElementRef, router_1.Router])
+        __metadata('design:paramtypes', [form_service_1.FormService, router_1.Router])
     ], RequestsComponent);
     return RequestsComponent;
 }());

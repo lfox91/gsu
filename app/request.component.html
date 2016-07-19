@@ -12,6 +12,16 @@
             <th>Submission Status</th>
         </tr>
       </thead>
+      <tbody>
+        <tr *ngFor="let user of users" (click)="showDetail(user)" [class.selected]="user === selectedUser">
+          <td> {{ user.FirstName + " " + user.LastName }}</td>
+          <td> {{ user.StartDate }}</td>
+          <td> {{ user.EndDate }}</td>
+          <td> {{ user.EmailAddress }}</td>
+          <td> {{ user.Reason }}</td>
+          <td> {{ user.SubmissionStatus }}</td>
+        </tr>
+      </tbody>
       <tfoot>
         <tr>
           <th>Name</th>
@@ -22,17 +32,6 @@
           <th>Submission Status</th>
         </tr>
       </tfoot>
-      <tbody>
-        <tr *ngFor="let user of users" [class.selected]="user === selectedUser">
-          <td> Name: {{ user.FirstName + " " + user.LastName }}</td>
-          <td> Start Date: {{ user.StartDate }}</td>
-          <td> End Date: {{ user.EndDate }}</td>
-          <td> Email Address: {{ user.EmailAddress }}</td>
-          <td> Reason: {{ user.Reason }}</td>
-          <td> Submission Status: {{ user.SubmissionStatus }}</td>
-          <button (click)="showDetail(user)">Details</button>
-        </tr>
-      </tbody>
     </table>
   </section>
 
