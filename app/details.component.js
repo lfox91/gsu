@@ -27,15 +27,10 @@ var DetailsComponent = (function () {
             console.table(params);
             var id = +params['id'];
             _this.formService.getDetails(id)
-                .subscribe(function (user) { _this.user = user; console.log(user); });
+                .map(function (user) { return _this.user = user; });
         });
     };
-    DetailsComponent.prototype.ngOnDestroy = function () {
-        this.sub.unsubscribe();
-    };
-    DetailsComponent.prototype.goBack = function () {
-        window.history.back();
-    };
+    ;
     DetailsComponent = __decorate([
         core_1.Component({
             selector: 'user-details',
@@ -47,4 +42,12 @@ var DetailsComponent = (function () {
     return DetailsComponent;
 }());
 exports.DetailsComponent = DetailsComponent;
+ngOnDestroy();
+{
+    this.sub.unsubscribe();
+}
+goBack();
+{
+    window.history.back();
+}
 //# sourceMappingURL=details.component.js.map
