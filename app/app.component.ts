@@ -4,6 +4,7 @@ import { ROUTER_DIRECTIVES } from '@angular/router';
 import { FormComponent } from './form.component';
 import { RequestsComponent } from './request.component';
 import { DetailsComponent } from './details.component';
+import { DataTableDirectives } from 'angular2-datatable/datatable';
 import './rxjs-operator';
 
 @Component({
@@ -16,7 +17,7 @@ import './rxjs-operator';
       </nav>
     </header>
     <router-outlet></router-outlet>`,
-    directives: [FormComponent, ROUTER_DIRECTIVES],
+    directives: [FormComponent, ROUTER_DIRECTIVES, DataTableDirectives],
     precompile: [FormComponent, RequestsComponent, DetailsComponent]
 })
 export class AppComponent {}

@@ -2,14 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import { NgForm }    from '@angular/common';
 import { Router } from '@angular/router';
 
-import {DataTableDirectives} from 'angular2-datatable/datatable';
 import { FormService } from './form.service';
 import { User } from './user';
 
 @Component({
   selector: 'requests',
   templateUrl: 'app/request.component.html',
-  directives: [DataTableDirectives],
   providers: [FormService]
 })
 
@@ -29,14 +27,6 @@ export class RequestsComponent implements OnInit {
   /////////////////////////
   ngOnInit() {
     this.getUsers();
-    $(document).ready(function() {
-      $('#requests').DataTable( {
-          dom: 'Bfrtip',
-          buttons: [
-              'copy', 'csv', 'excel', 'pdf', 'print'
-          ]
-    } );
-} );
   }
   showDetail( user: User ) {
     this.selectedUser = user;
