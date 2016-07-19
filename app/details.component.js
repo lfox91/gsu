@@ -27,7 +27,7 @@ var DetailsComponent = (function () {
             _this.formService.getDetails(id)
                 .subscribe(function (user) {
                 _this.user = user;
-                console.log('ngOnInit this.user  = ' + _this.user);
+                console.log('ngOnInit this.user  = ' + JSON.stringify(_this.user));
             });
         });
     };

@@ -74,7 +74,7 @@ var FormService = (function () {
     };
     FormService.prototype.extractData = function (res) {
         var body = res.json();
-        console.log('extract body: f.s 69: ' + body);
+        console.log('extract body: f.s 69: ' + JSON.stringify(body));
         return body || {};
     };
     FormService.prototype.handleError = function (error) {

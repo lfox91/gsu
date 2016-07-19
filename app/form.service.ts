@@ -71,7 +71,7 @@ export class FormService {
   }
   private extractData(res: Response) {
     let body = res.json();
-    console.log('extract body: f.s 69: '+ body);
+    console.log('extract body: f.s 69: '+ JSON.stringify(body));
     return body || { };
   }
   private handleError (error: any) {

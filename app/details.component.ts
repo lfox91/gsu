@@ -26,7 +26,7 @@ export class DetailsComponent implements OnInit, OnDestroy {
       this.formService.getDetails(id)
                       .subscribe( user => {
                         this.user = user;
-                        console.log('ngOnInit this.user  = ' + this.user);
+                        console.log('ngOnInit this.user  = ' + JSON.stringify( this.user));
                       });
     });
   }
