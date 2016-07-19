@@ -24,7 +24,7 @@ var DetailsComponent = (function () {
         var _this = this;
         this.sub = this.route.params.subscribe(function (params) {
             var id = +params['Id'];
-            _this.formService.getDetails(Id)
+            _this.formService.getDetails(id)
                 .subscribe(function (user) { return _this.user = user; });
         });
     };
