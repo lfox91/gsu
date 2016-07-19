@@ -1,4 +1,4 @@
-import { Component, OnInit, ElementRef } from '@angular/core';
+import { Component, OnInit, ElementRef, Directive } from '@angular/core';
 import { NgForm }    from '@angular/common';
 import { Router } from '@angular/router';
 
@@ -11,7 +11,9 @@ declare var jQuery: any;
   templateUrl: 'app/request.component.html',
   providers: [FormService]
 })
-
+@Directive({
+    selector: '.table'
+})
 export class RequestsComponent implements OnInit {
   constructor ( private formService: FormService,
                 private elRef: ElementRef,
