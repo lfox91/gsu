@@ -4,7 +4,7 @@ import { Router } from '@angular/router';
 
 import { FormService } from './form.service';
 import { User } from './user';
-declare var jQuery: any;
+
 
 @Component({
   selector: 'requests',
@@ -29,8 +29,8 @@ export class RequestsComponent implements OnInit {
   /////////////////////////
   ngOnInit() {
     this.getUsers();
-    jQuery(this.elRef.nativeElement).DataTable();
   }
+  
   showDetail( user: User ) {
     this.selectedUser = user;
     this.router.navigate(['/requests/', this.selectedUser.Id]);

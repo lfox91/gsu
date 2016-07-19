@@ -30,7 +30,6 @@ var RequestsComponent = (function () {
     /////////////////////////
     RequestsComponent.prototype.ngOnInit = function () {
         this.getUsers();
-        jQuery(this.elRef.nativeElement).DataTable();
     };
     RequestsComponent.prototype.showDetail = function (user) {
         this.selectedUser = user;
