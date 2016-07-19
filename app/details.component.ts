@@ -24,7 +24,7 @@ export class DetailsComponent implements OnInit, OnDestroy {
     this.sub = this.route.params.subscribe(params => {
       let id = +params['id'];
       this.formService.getDetails(id)
-      .then(user => this.user = user);
+                      .subscribe(user => this.user = user);
     });
   }
   ngOnDestroy() {

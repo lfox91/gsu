@@ -25,7 +25,7 @@ var DetailsComponent = (function () {
         this.sub = this.route.params.subscribe(function (params) {
             var id = +params['id'];
             _this.formService.getDetails(id)
-                .then(function (user) { return _this.user = user; });
+                .subscribe(function (user) { return _this.user = user; });
         });
     };
     DetailsComponent.prototype.ngOnDestroy = function () {

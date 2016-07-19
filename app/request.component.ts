@@ -29,7 +29,9 @@ export class RequestsComponent implements OnInit {
     this.getUsers().subscribe( () => console.log(this.users));
   }
   showDetail( user: User ) {
+    console.log(user);
     this.selectedUser = user;
+    console.log(this.selectedUser)
     this.router.navigate(['/', this.selectedUser.id]);
   }
 
