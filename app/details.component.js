@@ -22,14 +22,12 @@ var DetailsComponent = (function () {
     /////////////////////////
     DetailsComponent.prototype.ngOnInit = function () {
         var _this = this;
-        console.log(this.route);
         this.sub = this.route.params.subscribe(function (params) {
-            console.table(params);
             var id = +params['id'];
             _this.formService.getDetails(id)
-                .map(function (user) {
+                .subscribe(function (user) {
                 _this.user = user;
-                console.log('ngOnInit this.user  = ', _this.user);
+                console.log('ngOnInit this.user  = ' + _this.user);
             });
         });
     };

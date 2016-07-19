@@ -14,21 +14,19 @@ import { User } from './user'
 export class DetailsComponent implements OnInit, OnDestroy {
   constructor ( private formService: FormService,
                 private route: ActivatedRoute) {};
-  user: any;
+  user: User;
   sub: any;
 
   /////////////////////////
   // Event handlers
   /////////////////////////
   ngOnInit() {
-    console.log(this.route);
-    this.sub = this.route.params.subscribe(params => {
-      console.table(params);
+    this.sub = this.route.params.subscribe( params => {
       let id = +params['id'];
       this.formService.getDetails(id)
-                      .map(user => {
+                      .subscribe( user => {
                         this.user = user;
-                        console.log('ngOnInit this.user  = 'this.user);  
+                        console.log('ngOnInit this.user  = ' + this.user);
                       });
     });
   }
