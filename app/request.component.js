@@ -12,8 +12,9 @@ var core_1 = require('@angular/core');
 var router_1 = require('@angular/router');
 var form_service_1 = require('./form.service');
 var RequestsComponent = (function () {
-    function RequestsComponent(formService, router) {
+    function RequestsComponent(formService, elRef, router) {
         this.formService = formService;
+        this.elRef = elRef;
         this.router = router;
         this.users = [];
     }
@@ -29,6 +30,7 @@ var RequestsComponent = (function () {
     /////////////////////////
     RequestsComponent.prototype.ngOnInit = function () {
         this.getUsers();
+        jQuery(this.elRef.nativeElement).DataTable();
     };
     RequestsComponent.prototype.showDetail = function (user) {
         this.selectedUser = user;
@@ -40,7 +42,7 @@ var RequestsComponent = (function () {
             templateUrl: 'app/request.component.html',
             providers: [form_service_1.FormService]
         }), 
-        __metadata('design:paramtypes', [form_service_1.FormService, router_1.Router])
+        __metadata('design:paramtypes', [form_service_1.FormService, core_1.ElementRef, router_1.Router])
     ], RequestsComponent);
     return RequestsComponent;
 }());

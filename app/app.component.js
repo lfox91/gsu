@@ -13,7 +13,6 @@ var router_1 = require('@angular/router');
 var form_component_1 = require('./form.component');
 var request_component_1 = require('./request.component');
 var details_component_1 = require('./details.component');
-var datatable_1 = require('angular2-datatable/datatable');
 require('./rxjs-operator');
 var AppComponent = (function () {
     function AppComponent() {
@@ -22,7 +21,7 @@ var AppComponent = (function () {
         core_1.Component({
             selector: 'my-app',
             template: "\n    <header>\n      <nav>\n        <a [routerLink]=\"['/']\" routerLinkActive=\"active\">New Request</a>\n        <a [routerLink]=\"['/requests']\" routerLinkActive=\"active\">Past Requests</a>\n      </nav>\n    </header>\n    <router-outlet></router-outlet>",
-            directives: [form_component_1.FormComponent, router_1.ROUTER_DIRECTIVES, datatable_1.DataTableDirectives],
+            directives: [form_component_1.FormComponent, router_1.ROUTER_DIRECTIVES],
             precompile: [form_component_1.FormComponent, request_component_1.RequestsComponent, details_component_1.DetailsComponent]
         }), 
         __metadata('design:paramtypes', [])
