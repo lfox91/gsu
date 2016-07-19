@@ -22,6 +22,7 @@ var DetailsComponent = (function () {
     /////////////////////////
     DetailsComponent.prototype.ngOnInit = function () {
         var _this = this;
+        console.log(this.route);
         this.sub = this.route.params.subscribe(function (params) {
             console.table(params);
             var id = +params['id'];

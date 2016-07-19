@@ -14,13 +14,14 @@ import { User } from './user'
 export class DetailsComponent implements OnInit, OnDestroy {
   constructor ( private formService: FormService,
                 private route: ActivatedRoute) {};
-  user: User;
+  user: any;
   sub: any;
 
   /////////////////////////
   // Event handlers
   /////////////////////////
   ngOnInit() {
+    console.log(this.route);
     this.sub = this.route.params.subscribe(params => {
       console.table(params);
       let id = +params['id'];
