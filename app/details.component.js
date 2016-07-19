@@ -37,7 +37,7 @@ var DetailsComponent = (function () {
     };
     DetailsComponent = __decorate([
         core_1.Component({
-            selector: 'details',
+            selector: 'user-details',
             templateUrl: 'app/details.component.html',
             providers: [form_service_1.FormService]
         }), 

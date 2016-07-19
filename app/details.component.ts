@@ -6,7 +6,7 @@ import { FormService } from './form.service';
 import { User } from './user'
 
 @Component({
-  selector: 'details',
+  selector: 'user-details',
   templateUrl: 'app/details.component.html',
   providers: [FormService]
 })

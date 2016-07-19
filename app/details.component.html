@@ -1,12 +1,28 @@
 <div class="container">
   <section class="container">
-    {{JSON.stringify(user)}}
-  id: {{ user.Id }}
-  Start Date: {{ user.StartDate }}
-  End Date: {{ user.EndDate }}
-  Name: {{ user.FirstName + " " + user.LastName }}
-  Email Address: {{ user.EmailAddress }}
-  Reason: {{ user.Reason }}
-  Submission Status: {{ user.SubmissionStatus }}
+    <div class="row">
+      <div class="col-xs-3">Name</div>
+      <div class="col-xs-9  pull-left">{{ user.firstName + " " + user.lastName }}</div>
+    </div>
+    <div class="row">
+      <div class="col-xs-3">Email Address</div>
+      <div class="col-xs-9 pull-left">{{ user.emailAddress }}</div>
+    </div>
+    <div class="row">
+      <div class="col-xs-3">Reason</div>
+      <div class="col-xs-9 pull-left">{{ user.reason }}</div>
+    </div>
+    <div class="row">
+      <div class="col-xs-3">Start Date</div>
+      <div class="col-xs-9 pull-left">{{ user.startDate }}</div>
+    </div>
+    <div class="row">
+      <div class="col-xs-3">End Date</div>
+      <div class="col-xs-9 pull-left">{{ user.endDate }}</div>
+    </div>
+    <div class="row">
+      <div class="col-xs-3">Submission Status</div>
+      <div class="col-xs-9 pull-left">{{ user.submissionStatus }}</div>
+    </div>
   </section>
 </div>
