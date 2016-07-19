@@ -2,27 +2,28 @@
   <section class="container">
     <div class="row">
       <div class="col-xs-3">Name</div>
-      <div class="col-xs-9  pull-left">{{ user.firstName + " " + user.lastName }}</div>
+      <div class="col-xs-9  pull-left">{{ user.FirstName + " " + user.LastName }}</div>
     </div>
     <div class="row">
       <div class="col-xs-3">Email Address</div>
-      <div class="col-xs-9 pull-left">{{ user.emailAddress }}</div>
+      <div class="col-xs-9 pull-left">{{ user.EmailAddress }}</div>
     </div>
     <div class="row">
       <div class="col-xs-3">Reason</div>
-      <div class="col-xs-9 pull-left">{{ user.reason }}</div>
+      <div class="col-xs-9 pull-left">{{ user.Reason }}</div>
     </div>
     <div class="row">
       <div class="col-xs-3">Start Date</div>
-      <div class="col-xs-9 pull-left">{{ user.startDate }}</div>
+      <div class="col-xs-9 pull-left">{{ user.StartDate }}</div>
     </div>
     <div class="row">
       <div class="col-xs-3">End Date</div>
-      <div class="col-xs-9 pull-left">{{ user.endDate }}</div>
+      <div class="col-xs-9 pull-left">{{ user.EndDate }}</div>
     </div>
     <div class="row">
       <div class="col-xs-3">Submission Status</div>
-      <div class="col-xs-9 pull-left">{{ user.submissionStatus }}</div>
+      <div class="col-xs-9 pull-left">{{ user.SubmissionStatus }}</div>
     </div>
+    <button (click)="goBack()">Back</button>
   </section>
 </div>
