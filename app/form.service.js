@@ -24,7 +24,7 @@ var FormService = (function () {
             .catch(this.handleError);
     };
     FormService.prototype.getDetails = function (id) {
-        var url = "apiUrl/" + id;
+        var url = this.apiUrl + "/" + id;
         return this.http
             .get(url)
             .map(this.extractData)

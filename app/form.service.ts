@@ -17,7 +17,7 @@ export class FormService {
                .catch(this.handleError);
   }
   getDetails(id: number): Observable<User> {
-    let url = `apiUrl/${id}`;
+    let url = `${this.apiUrl}/${id}`;
 
     return this.http
                .get(url)
