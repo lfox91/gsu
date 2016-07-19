@@ -43,8 +43,8 @@ var FormService = (function () {
         var body = JSON.stringify(user);
         var headers = new http_1.Headers({ 'Content-Type': 'application/json' });
         var options = new http_1.RequestOptions({ headers: headers });
-        var url = this.apiUrl + "/" + user.id;
-        console.log("updating user with id " + user.id);
+        var url = this.apiUrl + "/" + user.Id;
+        console.log("updating user with id " + user.Id);
         console.log('from put request ' + JSON.stringify(user));
         return this.http
             .put(url, body, options)
@@ -54,7 +54,7 @@ var FormService = (function () {
     FormService.prototype.delete = function (user) {
         var headers = new http_1.Headers();
         headers.append('Content-Type', 'application/json');
-        var url = this.apiUrl + "/" + user.id;
+        var url = this.apiUrl + "/" + user.Id;
         return this.http
             .delete(url, headers)
             .map(this.extractData)
@@ -68,7 +68,7 @@ var FormService = (function () {
                 return _this.put(user).subscribe(function (res) { return _this.getUsers().subscribe(function (users) { console.log(users); }); });
             }
             console.log('posting User');
-            ++user.id;
+            ++user.Id;
             return _this.post(user).subscribe(function (res) { return _this.getUsers().subscribe(function (users) { console.log(users); }); });
         });
     };

@@ -38,9 +38,9 @@ export class FormService {
     let body = JSON.stringify( user );
     let headers = new Headers({ 'Content-Type': 'application/json' });
     let options = new RequestOptions({ headers: headers });
-    let url = `${this.apiUrl}/${user.id}`;
+    let url = `${this.apiUrl}/${user.Id}`;
 
-    console.log(`updating user with id ${user.id}`)
+    console.log(`updating user with id ${user.Id}`)
         console.log('from put request ' + JSON.stringify(user))
     return this.http
                .put(url, body, options)
@@ -51,7 +51,7 @@ export class FormService {
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
 
-    let url = `${this.apiUrl}/${user.id}`;
+    let url = `${this.apiUrl}/${user.Id}`;
 
     return this.http
                .delete(url, headers)
@@ -65,7 +65,7 @@ export class FormService {
         return this.put(user).subscribe(res=>this.getUsers().subscribe(users=>{console.log(users)}));
       }
       console.log('posting User');
-      ++user.id;
+      ++user.Id;
       return this.post(user).subscribe(res=>this.getUsers().subscribe(users=>{console.log(users)}));
     })
   }
