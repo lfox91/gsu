@@ -24,12 +24,12 @@
       </tfoot>
       <tbody>
         <tr *ngFor="let user of users" [class.selected]="user === selectedUser">
-          <td> Name: {{ user.FirstName + " " + user.LastName }}</li>
-          <td> Start Date: {{ user.StartDate }}</li>
-          <td> End Date: {{ user.EndDate }}</li>
-          <td> Email Address: {{ user.EmailAddress }}</li>
-          <td> Reason: {{ user.Reason }}</li>
-          <td> Submission Status: {{ user.SubmissionStatus }}</li>
+          <td> Name: {{ user.FirstName + " " + user.LastName }}</td>
+          <td> Start Date: {{ user.StartDate }}</td>
+          <td> End Date: {{ user.EndDate }}</td>
+          <td> Email Address: {{ user.EmailAddress }}</td>
+          <td> Reason: {{ user.Reason }}</td>
+          <td> Submission Status: {{ user.SubmissionStatus }}</td>
           <button (click)="showDetail(user)">Details</button>
         </tr>
       </tbody>
